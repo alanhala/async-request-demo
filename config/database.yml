@@ -17,18 +17,18 @@
 development: &default
   adapter: postgresql
   encoding: unicode
-  database: rails-bootstrap_development
+  database: async-request-demo_development
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV.fetch('DB_USERNAME', 'rails-bootstrap') %>
-  password: <%= ENV.fetch('DB_PASSWORD', 'rails-bootstrap') %>
+  username: <%= ENV.fetch('DB_USERNAME', 'async-request-demo') %>
+  password: <%= ENV.fetch('DB_PASSWORD', 'async-request-demo') %>
   host: <%= ENV.fetch('DB_1_PORT_5432_TCP_ADDR', 'localhost') %>
   port: <%= ENV.fetch('DB_1_PORT_5432_TCP_PORT', '5432') %>
 
 test: &test
   <<: *default
-  database: rails-bootstrap_test
+  database: async-request-demo_test
 
 production:
   adapter: postgresql

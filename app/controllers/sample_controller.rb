@@ -1,10 +1,8 @@
 class SampleController < ApplicationController
 
   def slow
-    puts "llegue #{params[:id]}"
-    sleep(15.seconds)
-    render json: { message: 'slow' }
-    puts "me fui #{params[:id]}"
+    job = AsyncRequest::Job.create_and_enqueue(MyJob, params[:id])
+    render json: { token: job.token, url: async_request.job_url }, status: :accepted
   end
 
   def fast

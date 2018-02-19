@@ -78,6 +78,8 @@ gem 'rack-attack'
 
 gem 'webpacker', '~> 3.0'
 
+gem 'async_request', git: 'https://github.com/Wolox/async-requests.git', branch: 'logging'
+
 group :development do
   # Gem to detect N+1 queries
   gem 'better_errors'
